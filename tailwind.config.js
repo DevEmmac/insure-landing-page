@@ -11,6 +11,7 @@ export default {
         'primary': "#ECEEFF",
         "coral-red": "#FF6452",
         "slate-gray": "#6D6D6D",
+        "slategray": "rgb(221, 221, 221)",
         "pale-blue": "#F5F6FF",
         "white-400": "rgba(255, 255, 255, 0.80)"
       }
