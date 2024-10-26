@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import logo from '../assets/images/logo.svg';
 import twitter from '../assets/images/icon-twitter.svg';
 import facebook from '../assets/images/icon-facebook.svg';
@@ -45,29 +46,33 @@ const footerLinks = [
 ]
 
   return (
-    <section className='max-container padding'>
-        <div className='flex flex-1 justify-between border-b-2 border-slategray pb-6 leading-none'>
-            <div>
-               <img src={logo} alt="logo" className=''/>
+    <section className='max-container padding max-sm:flex  max-sm:flex-col justify-center items-center text-center'>
+        <div className='flex flex-1 justify-between border-b-2 h-14 max-lg:-mt-20 border-slategray max-lg:flex-col max-sm:bg-footer-pattern max-sm:w-full max-lg:h-36 max-sm:h-80'> 
+            <div className='max-sm:mt-24 max-lg:mt-5 max-lg:mb-4  max-sm:mb-7 flex max-lg:justify-center items-center'>
+               <img src={logo} alt="logo" className='object-contain'/>
             </div>
            
-            <div className='flex flex-row w-44 justify-between '>
+            <div className='flex flex-row w-44 justify-between my-auto max-lg:items-center max-lg:mx-auto max-lg:mb-8 max-sm:mb-12 '>
                 {footerLinks.map((icon) => (
-                    <div key={icon}>
-                         <img src={icon.src} alt="twitter-icon" className='object-contain'/>
+                    <div>
+                      <Link to={'/not-found'} key={icon}>
+                         <img src={icon.src} alt="twitter-icon" className='object-contain cursor-pointer'/>
+                    </Link>
                     </div>
                 ))}
             </div>
         </div>
 
-        <div className='flex flex-row justify-between pt-7 text-slate-gray'>
+        <div className='flex flex-1 justify-between pt-7 w-[80%] max-lg:flex-col max-sm:pt-0 max-lg:mx-auto'>
             {footerLinks.map((footerTitle) => (
                 <div key={footerTitle}>
-                    <h2> {footerTitle.title} </h2>
+                    <h2 className=' text-slate-gray font-semibold font-montserrat max-lg:pt-7 text-start'> {footerTitle.title} </h2>
 
-                    <ul >
+                    <ul className='mt-5 font-montserrat font-semibold text-[13px] text-start max-lg:text-center'>
                         {footerTitle.links.map((link) => (
-                            <li key={link}>{link.name}</li>
+                            <li key={link} className='hover:text-slate-gray cursor-pointer leading-7'>
+                                <Link to={'/not-found'}>{link.name}</Link>
+                            </li>
                       ))}
                     </ul> 
                 </div>

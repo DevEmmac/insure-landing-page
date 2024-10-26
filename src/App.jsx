@@ -1,18 +1,18 @@
 import React from 'react';
-import Humanize from './Sections/Humanize';
-import Wedifferent from './Sections/Wedifferent';
-import FindoutMore from './Sections/FindoutMore';
-import Footer from './Sections/Footer';
+import { Route, createBrowserRouter, createRoutesFromElements, RouterProvider } from 'react-router-dom';
+import MainLayOut from './MainlayOut/MainLayOut';
+import HomePage from './Pages/HomePage';
+import NotFoundPage from './Pages/NotFoundPage';
 
 const App = () => {
+  const router = createBrowserRouter(createRoutesFromElements(
+    <Route path='/' element={<MainLayOut/>}>
+      <Route index element={<HomePage/>} />
+      <Route path='/not-found' element={<NotFoundPage />}/>
+    </Route>
+  ));
   return (
-    <div>
-      <Humanize />
-      <Wedifferent />
-      <FindoutMore />
-      <Footer />
-    </div>
-   
+  <RouterProvider router={router}/>  
   )
 };
 

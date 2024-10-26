@@ -27,18 +27,18 @@ const Wedifferent = () => {
   ]
 
   return (
-    <section className='max-container padding mt-52'>
-        <h1 className='text-6xl'>We different</h1>
+    <section className='max-container padding mt-52 max-sm:mt-[430px] max-lg:text-center max-lg:mt-[500px]'>
+        <h1 className='text-6xl justify-start max-lg:text-center'>We different</h1>
 
-      <div className='flex flex-1 justify-between gap-10'>
+      <div className='flex flex-1 justify-between gap-10 max-lg:flex-col max-lg:text-center mt-28 max-lg:mt-10'>
         {different.map((item) => (
           <div key={item}>
-            <div className='mt-14'>
+            <div className='mt-6 flex max-lg:justify-center max-sm:items-center'>
               <img src={item.src} alt={item.alt} className='object-contain'/>
             </div>
-           
-            <h1 className='mt-8 font-semibold text-2xl font-'>{item.title}</h1>
-            <p className='mt-4 text-sm text-slate-gray leading-6 '>{item.review}</p>
+
+            <h1 className='mt-8 font-semibold text-2xl'>{item.title}</h1>
+            <p className='mt-4 text-sm text-slate-gray leading-6 max-sm:px-10'>{item.review}</p>
           </div>
         ))}
       </div>
